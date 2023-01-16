@@ -1,0 +1,102 @@
+{% extends 'home/base.html' %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg ">
+  <div class="container">
+      <a class="navbar-brand" href="#">Organic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Trending</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="#" role="button">Store</a>
+
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link">Organic</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link">Contact</a>
+              </li>
+          </ul>
+          <form class="d-flex" role="search">
+              <input class="px-2 search" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn0" type="submit">Search</button>
+          </form>
+          {% if request.user.is_authenticated %}
+            <a href="LogOut" type="button" class="btn btn-warning ms-3">LogOut</a>
+          {% else %}
+            <a href="log" type="button" class="btn btn-warning ms-3">LogIn</a>
+          {% endif %}
+            <a href="signForm" type="button" class="btn btn-warning ms-3">SignUp</a>
+      </div>
+  </div>
+</nav>
+
+<section class="main">
+  <div class="container py-5">
+      <div class="row py-5">
+          <div class="col-lg-7 pt-5 text-center">
+              <h1 style="color: white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem, ipsum dolor.</h1>
+              <button class="btn1 mt-3" type="submit" style="background-color: rgb(245, 196, 0);">For More Tips</button>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section>
+  <div class="container mt-5">
+      <div class="col-lg-5 m-auto text-center">
+          <h1>What's Trending</h1>
+          <h6 style="color: rgb(245, 0, 0); font-weight: 600;">Be Healthy Organic Food</h6>
+      </div>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+            </div>
+            <div>
+              <h3 class="fs-2">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+              <a href="#" class="btn btn-primary">
+                Primary button
+              </a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+            </div>
+            <div>
+              <h3 class="fs-2">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+              <a href="#" class="btn btn-primary">
+                Primary button
+              </a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+            </div>
+            <div>
+              <h3 class="fs-2">Featured title</h3>
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+              <a href="#" class="btn btn-primary">
+                Primary button
+              </a>
+            </div>
+          </div>
+        </div>
+  </div>
+</section>
+{% endblock body %}

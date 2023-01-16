@@ -1,0 +1,40 @@
+{% extends 'auth/base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="navbar-brand" style="color: red;">
+        Register Form
+    </div>
+    <form action="{% url 'sign' %}" method="post">
+        {% csrf_token %}
+        <div class="form-floating mb-3 mt-3">
+            <input name="first_name" type="text" class="form-control" id="floatingfName" placeholder="first name">
+            <label for="floatingName">First Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input name="last_name" type="text" class="form-control" id="floatinglName" placeholder="last name">
+            <label for="floatinglName">Last Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input name="username" type="text" class="form-control" id="floatinguserName" placeholder="username">
+            <label for="floatinguserName">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input name="email" type="email" class="form-control" id="floatingemail" placeholder="name@email.com">
+            <label for="floatingemail">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input name="retype_password" type="password" class="form-control" id="floatingrePassword"
+                placeholder="retype password">
+            <label for="floatingrePassword">Retype Password</label>
+        </div>
+        <button type="submit" class="btn btn-success mb-3">Confirm</button>
+        <a href="#" class="ms-3" style="text-decoration: none;">Already have an account ? <a href="log" type="button"
+                class="btn btn-warning mb-3 ms-3">LogIn</a></a>
+    </form>
+</div>
+{% endblock body %}
