@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block navbar %}{% endblock navbar %}
+{% block body-content %}
+    <div class="register-form d-flex flex-column justify-content-center align-items-center">
+        <div class="h3 text-white mt-3">Register</div>
+        <form action="" method="post">
+            {% for form in form %}
+            {% csrf_token %}
+                <div class="label-item position-relative my-3">
+                    {{form.label_tag}}
+                    {{form}}
+                    <small class="text-danger error-show">
+                        {{form.errors|striptags}}
+                    </small>
+                </div>
+            {% endfor %}
+            <input class="form-submit-btn fw-medium mt-5" type="submit" value="Register">
+        </form>
+        <div class="my-3 text-white">Already have an account? <a href="{% url 'login' %}" class="text-danger fw-bold text-black text-decoration-none">Login</a></div>
+    </div>
+{% endblock body-content %}
